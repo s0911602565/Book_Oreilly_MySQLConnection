@@ -19,8 +19,8 @@ public class Q1 {
     @RequestMapping("getMessage1")
     String getMessage1(){
         Z1 z = new Z1();
-        z.setName("Demo");
+        z.setName("Demo2");
         m.save(z);
-        return "hello john";
+        return "hello john2";
     }
 }
