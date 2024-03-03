@@ -16,19 +16,21 @@ select * from z1;
 public class Connection_MySQL {
     public static void main(String[] args) throws Exception {
         try {
+
             Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://127.0.0.1:3306/day1";
             Connection c = DriverManager.getConnection(url, "root", "12345678");
             Statement s = c.createStatement();
-            ResultSet rs = s.executeQuery("select name from z1 where id = 1");
+            ResultSet rs = s.executeQuery("select name from z1 ");
             while (rs.next()) {
                 System.out.println(rs.getString("name"));
             }
+
             rs.close();
             s.close();
             c.close();
         } catch (Exception e) {
-
+            System.out.println(e);
         }
 
     }
